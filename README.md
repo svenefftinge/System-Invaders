@@ -3,4 +3,4 @@ Beta version.
 
 "The evil dictator of planet D want to conquer your system ! :-) "
 
-![alt text](screenshots/screenshoot.png "Game's screenshoot")
+![alt text](screenshoots/screenshoot.png "Game's screenshoot")
