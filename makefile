@@ -1,7 +1,7 @@
 all: systemInvaders
 
 systemInvaders: ./src/main/main.go ./src/space/space.go
-	GOPATH=`pwd` go build -gcflags -O2 -o systemInvaders main
+	GOPATH=`pwd` go build -gcflags "-O2" -o systemInvaders main
 run:
 	GOPATH=`pwd` go run  src/main/main.go
 clean:
