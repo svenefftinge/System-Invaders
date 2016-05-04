@@ -15,6 +15,8 @@
 // Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 // -----------------------------------------------------------------
 
+// +build linux
+
 package main
 
 import "space"
