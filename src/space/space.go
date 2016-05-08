@@ -604,7 +604,7 @@ func (p *Playground) deployMissile(){
 
 		p.screen[rowadj][coladj]   = lines[0]
 		p.screen[rowadj+1][coladj] = lines[1]
-		if(rowadj < startPos){
+		if rowadj < startPos {
 			if(rowadj % 2 == 0){
 					p.screen[rowadj+2][coladj] = lines[2]
 					p.screen[rowadj+3][coladj] = lines[3]
@@ -617,9 +617,7 @@ func (p *Playground) deployMissile(){
 			p.screen[rowadj+2][coladj] = SPACE_CHARAC
 		}
 
-		p.refreshScreenUnlock(0)
-
-		time.Sleep(TIMER_LEVEL_A)
+		p.refreshScreenUnlock(TIMER_LEVEL_A)
 	}
 
 	p.Lock() 
@@ -724,7 +722,7 @@ func (p *Playground) restart(confirm bool){
 	copy(p.screen[p.centTrmRow][(p.centTrmCol - MSG_OFFSET):], textAdvA[:])
 	copy(p.screen[p.centTrmRow+1][(p.centTrmCol - MSG_OFFSET):], textAdvB[:])
 
-	if confirm{
+	if confirm {
 		var (
 			textAdvCA = []rune {'\U00002551','\U00000020','\U00000047','\U00000041','\U0000004D','\U00000045','\U00000020','\U0000004F','\U00000056','\U00000045','\U00000052','\U00000020','\U00002551'}
 			textAdvCB = []rune {'\U00002551','\U00000020','\U00000041','\U00000047','\U00000041','\U00000049','\U0000004E','\U00000020','\U0000003C','\U00000072','\U0000003E','\U00000020','\U00002551'}
@@ -751,7 +749,7 @@ func (p *Playground) restart(confirm bool){
 	p.changeScore(STD_ENEM_POINT)
 	p.refreshScreenUnlock(0)
 
-	if confirm{ 
+	if confirm { 
 		p.wgConfirm.Add(1) 
 		p.wgConfirm.Wait() 
 	}else {
@@ -764,14 +762,12 @@ func (p *Playground) restart(confirm bool){
 		binary, lookErr := exec.LookPath(COMPILER_NAME)
 		if lookErr != nil { panic(lookErr) }
 		args := []string{COMPILER_NAME, RUN_PARAMETER, SOURCE_NAME}
-		execErr := syscall.Exec(binary, args,  env)
-		if execErr != nil { panic(execErr) }
+		if execErr := syscall.Exec(binary, args,  env); execErr != nil { panic(execErr) }
 	}else{
 		binary, lookErr := exec.LookPath(p.args[0])
 		if lookErr != nil { binary = p.args[0] }
 		pars := []string{p.args[0]}
-		execErr := syscall.Exec(binary, pars,  env)
-		if execErr != nil { panic(execErr) }
+		if execErr := syscall.Exec(binary, pars,  env); execErr != nil { panic(execErr) }
 	}
 }
 
@@ -835,5 +831,5 @@ func (p *Playground) refreshScreenUnlock(timeWait time.Duration){
 		fmt.Fprintf(os.Stderr, string(p.screen[i]))
 	}
 	p.Unlock()
-	if(timeWait > 0) {time.Sleep(timeWait)}
+	if timeWait > 0 {time.Sleep(timeWait)}
 }
