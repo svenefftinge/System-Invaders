@@ -1,4 +1,0 @@
-image:
-  file: Dockerfile
-tasks:
-- command: "GOPATH=`pwd` go run  src/main/main.go"
