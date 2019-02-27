@@ -1,2 +1,2 @@
 tasks:
-- command: GOPATH="src/github.com/gbonacini/System-Invaders/" go run src/main/main.go
+- command: GOPATH="/workspace/src/github.com/gbonacini/System-Invaders/" go run src/main/main.go
