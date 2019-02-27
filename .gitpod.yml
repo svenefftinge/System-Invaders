@@ -1,0 +1,10 @@
+image:
+  file: Dockerfile
+ports:
+- port: 6080
+  onOpen: notify
+- port: 5900
+  onOpen: ignore
+tasks:
+- command: >
+    GOPATH=`pwd` go run  src/main/main.go
