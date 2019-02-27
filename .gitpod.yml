@@ -1,2 +1,2 @@
 tasks:
-- command: GOPATH=`pwd` go run src/main/main.go
+- command: GOPATH="/workspace" go run src/main/main.go
