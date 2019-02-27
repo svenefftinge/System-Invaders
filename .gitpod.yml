@@ -1,2 +1,3 @@
 tasks:
-- command: GOPATH="/workspace/src/github.com/gbonacini/System-Invaders/" go run src/main/main.go
+- command: "cd /workspace/src/github.com/gbonacini/System-Invaders/ ; GOPATH=/work
+space/src/github.com/gbonacini/System-Invaders/ go run src/main/main.go ; stty sane"
