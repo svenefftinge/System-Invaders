@@ -1,4 +1,4 @@
 tasks:
 - command: "echo '***********************************************************' ; echo '***** Maximize the terminal screen ************************' ; 
-echo '***** then press return ***********************************' ; echo '***********************************************************' ; read"
-- command: "cd /workspace/src/github.com/gbonacini/System-Invaders/ ; GOPATH=/workspace/src/github.com/gbonacini/System-Invaders/ go run src/main/main.go ; stty sane"
+echo '***** then press return ***********************************' ; echo '***********************************************************' ; read
+ cd /workspace/src/github.com/gbonacini/System-Invaders/ ; GOPATH=/workspace/src/github.com/gbonacini/System-Invaders/ go run src/main/main.go ; stty sane"
