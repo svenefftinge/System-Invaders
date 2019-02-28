@@ -1,4 +1,4 @@
-Dectription
+Desctription
 ============
 
 SystemInvader is a game written in Go, running in a Linux tty.
